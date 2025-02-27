@@ -4,8 +4,8 @@ Lab inicial de Terraform para crear 2 MVs sencillas con acceso SSH: 1 en Azure y
 # Preparación
 - Instalar Terraform
 - Credenciales de acceso para los diferentes cloud:
-  - AWS: Crear archivo `%userprofile%/.aws/credentials` con la contenido obtenido desde el AWS Academy Learner Lab > AWS Details > AWS CLI > Show
-  - Azure: Logarse en Terminal con `az login` y crear clave con `ssh-keygen -t rsa -b 2048`
+  - **AWS**: Crear archivo `%userprofile%/.aws/credentials` con la contenido obtenido desde el AWS Academy Learner Lab > AWS Details > AWS CLI > Show
+  - **Azure**: Logarse en Terminal con `az login` y crear clave con `ssh-keygen -t rsa -b 2048`
 
 # Ejecución
 - `terraform fmt` : Reformat your configuration in the standard style
