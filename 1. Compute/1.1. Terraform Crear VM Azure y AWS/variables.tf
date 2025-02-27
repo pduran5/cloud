@@ -1,0 +1,13 @@
+# AWS
+variable "aws_region" {
+  default = "us-east-1"
+}
+
+# Azure
+variable "azurerm_region" {
+  default = "westus2"
+}
+
+variable "ssh_public_key" {
+  description = "C:/Users/Pit/.ssh/id_rsa.pub"
+}
