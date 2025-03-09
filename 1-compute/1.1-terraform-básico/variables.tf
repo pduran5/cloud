@@ -9,5 +9,5 @@ variable "azurerm_region" {
 }
 
 variable "ssh_public_key" {
-  description = "C:/Users/Pit/.ssh/id_rsa.pub"
+  description = "SSH Public Key"
 }
