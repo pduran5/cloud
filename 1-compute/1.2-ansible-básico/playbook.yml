@@ -1,0 +1,41 @@
+---
+- name: Configure Application Servers (Apache on Amazon Linux 2023)
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update dnf cache
+      dnf:
+        update_cache: yes
+
+    - name: Install Apache (httpd)
+      dnf:
+        name: httpd
+        state: latest
+
+    - name: Start and enable Apache Service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Open HTTP port (80) in firewall
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+      notify: Reload firewalld
+
+    - name: Render index.html template
+      template:
+        src: index.html.j2
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0644'
+
+  handlers:
+    - name: Reload firewalld
+      service:
+        name: firewalld
+        state: reloaded
